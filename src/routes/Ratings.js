@@ -4,13 +4,15 @@ import { FilledInput,
         FormHelperText, 
         Input, 
         InputLabel, 
-        OutlinedInput } from '@material-ui/core';
+        OutlinedInput,
+        Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
+      width: '100%',
     },
   },
 }));
@@ -24,6 +26,7 @@ export default function Ratings() {
   };
 
   return (
+    <Container maxWidth="sm">
     <form className={classes.root} noValidate autoComplete="off">
       <FormControl>
         <InputLabel htmlFor="component-simple">Name</InputLabel>
@@ -63,5 +66,6 @@ export default function Ratings() {
         <FilledInput id="component-filled" value={name} onChange={handleChange} />
       </FormControl>
     </form>
+    </Container>
   );
 }
